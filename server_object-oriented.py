@@ -1,6 +1,8 @@
 """
   ch4t-Server
   The server of the ch4t-programm
+  but it's object-oriented now
+  !!still under development!!
   Written by Elias Rauth
 """
 

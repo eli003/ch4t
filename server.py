@@ -7,6 +7,7 @@
 import socket  # Import socket module
 import sys
 import threading
+import json
 
 codeset = 'cp850'  # or 'Latin-1' or 'UTF-8'
 

@@ -6,4 +6,4 @@
 - Simon: 
 
 ### June 19th
-- Elias: 
+- Elias: created new python-file server_object-oriented

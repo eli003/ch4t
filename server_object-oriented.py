@@ -11,18 +11,17 @@ import sys
 import threading
 
 codeset = 'cp850'  # or 'Latin-1' or 'UTF-8'
-
+clients = 0
 
 # Client-class
 class Client(object):
-    def __init__(self, name="unknown name"):
-        """
+    def __init__(self):
+        self.connection, self.client_address = s.accept()
 
-        :param name: name of the client
-        """
-        self.client_name = name
+    def send_message(self, message):
+        self.connection.sendall(("Gesendet: %s" % message).encode(codeset))
 
-    def handle_connection(self):
+    def get_message(self):
         pass
 
 
@@ -34,12 +33,15 @@ s.bind((host, port))  # Bind to the port
 s.listen(1)  # Now wait for client connection.
 
 while True:
-    connection, client_address = s.accept()  # Establish / get one connection with client.
+    new_client = Client()
+    # new_client.send_message()
+    # connection, client_address = s.accept()  # Establish / get one connection with client.
 #    handle_connection(connection,client_address)   # handle connections one by one
     # or start new thread for each connection
-    print('Got connection from %s' % str(client_address), file=sys.stderr)
+    # print('Got connection from %s' % str(client_address), file=sys.stderr)
 
-    t = threading.Thread(target=handle_connection, args=(connection,))
+    t = threading.Thread(target=new_client.send_message("hallo"))
+    # t = threading.Thread(target=handle_connection, args=(connection,))
     t.start()
     # and continue with loop accepting next connection
 # s.close()

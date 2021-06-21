@@ -7,3 +7,6 @@
 
 ### June 19th
 - Elias: created new python-file server_object-oriented
+
+### June 21st
+- Elias: worked on the server-file

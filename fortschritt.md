@@ -10,4 +10,4 @@
 
 ### June 22nd
 - Elias: working server with clients as objects in a class
-- Tobias: first working cli_client with two threads for handling msg sending and receiving messages simultaneously
+- Tobias: first working cli_client with two threads for handling message sending and receiving simultaneously.

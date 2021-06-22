@@ -36,6 +36,7 @@ host = ''  # unspecified ip - all interfaces on host
 port = 64001  # Reserve a port for your service.
 s.bind((host, port))  # Bind to the port
 
+
 s.listen(1)  # Now wait for client connection.
 new_clients = []
 clients = 1

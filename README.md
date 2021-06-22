@@ -13,10 +13,10 @@ https://pythonprogramming.net/pickle-objects-sockets-tutorial-python-3/
 ### Server
 
 ### CLI Client
-Used for formatting terminal text:
+For a better User Experience, we format the terminal output with colors. We use a 256-color scheme for our CLI client.
 Documentation: https://stackabuse.com/how-to-print-colored-text-in-python
 
-We will use the 256-color scheme for our CLI client.
+
 
 ### GUI Client
 

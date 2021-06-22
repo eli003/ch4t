@@ -14,66 +14,51 @@ codeset = 'cp850'  # or 'Latin-1' or 'UTF-8'
 
 
 # Client-class
-class Clients(object):
-    def __init__(self):
+class Clients:
+    client_list = list()
+
+    def __init__(self, index):
         self.connection, self.client_address = s.accept()
+        type(self).client_list.append(self.connection)   # Alle Clients teilen sich die client_list
+        self.index = index
+        print("Verbundene Clients: ", len(type(self).client_list))
 
     def send_message(self, message):
-        self.connection.sendall(("Gesendet: %s" % message).encode(codeset))
+        self.connection.send(("Gesendet: %s" % message).encode(codeset))
 
     def get_message(self):
         while True:
-            byte_data = self.connection.recv(300)
+            byte_data = self.connection.recv(1024)
             data = byte_data.decode(codeset)
+            print(self.index, 'has send')
             print('received "%s"' % data, file=sys.stderr)
             print('sending data back to the client', file=sys.stderr)
-            self.connection.sendall(("server got data: %s" % data).encode(codeset))
+            for cnt, client in enumerate(type(self).client_list):    # nachricht wird nicht an sender gesendet
+                if cnt != self.index:
+                    client.send(bytes(str(data), 'utf8'))
 
 
-'''
-s = socket.socket()  # Create a socket object
-host = ''  # unspecified ip - all interfaces on host
-port = 64001  # Reserve a port for your service.
-s.bind((host, port))  # Bind to the port
+def get_new_clients(cnt):
+    client = Clients(cnt)
+    client.send_message('hallo client')
 
-
-s.listen(1)  # Now wait for client connection.
-new_clients = []
-clients = 1
-'''
-
-
-def get_new_clients():
-    client = Clients()
-    t1 = threading.Thread(target=client.send_message("hallo\n"))
-    t1.start()
-    t2 = threading.Thread(target=client.get_message())
+    t2 = threading.Thread(target=client.get_message)
     t2.start()
 
 
 s = socket.socket()  # Create a socket object
-host = ''  # unspecified ip - all interfaces on host
+
+hostname = socket.gethostbyname_ex(socket.gethostname())[-1]  # IP-Adresse des PCs bestimmen
+local_ip = hostname[1]
+# print(hostname)
+print(local_ip)
+
+host = local_ip  # unspecified ip - all interfaces on host
 port = 64001  # Reserve a port for your service.
 s.bind((host, port))  # Bind to the port
-s.listen(1)  # Now wait for client connection.
+s.listen(10)  # Now wait for client connection.
 
-t0 = threading.Thread(target=get_new_clients())
-t0.start()
-
+counter = 0
 while True:
-    pass
-    # client = Clients()
-    # print("Schleife")
-    # new_client.send_message()
-    # connection, client_address = s.accept()  # Establish / get one connection with client.
-#    handle_connection(connection,client_address)   # handle connections one by one
-    # or start new thread for each connection
-    # print('Got connection from %s' % str(client_address), file=sys.stderr)
-
-    # t1 = threading.Thread(target=client.send_message("hallo\n"))
-    # t = threading.Thread(target=handle_connection, args=(connection,))
-    # t1.start()
-    # t2 = threading.Thread(target=client.get_message())
-    # t2.start()
-    # and continue with loop accepting next connection
-# s.close()
+    get_new_clients(counter)
+    counter += 1

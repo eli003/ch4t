@@ -8,6 +8,9 @@ import threading
 host = "127.0.0.1"  # add feature: get from .gitignore config file
 port = 64001  # add feature: get from .gitignore config file
 
+def hell(s):
+    print(s)
+
 def get_config():
     try:
         u = input("Before you can start chatting please enter your name: ")
@@ -17,51 +20,49 @@ def get_config():
     return u, ip
 
 def send_msg(socket):
-    print("hello, sending")
-    pass
+    while True:
+        msg = input("")
+        socket.send(msg.encode("cp850"))
+
 def recv_msg(socket):
-    print("Closing")
-    #socket.close()
-    pass
+    while True:
+        bytes = s.recv(1024)
+        data = bytes.decode("UTF-8")
+        print(data)
+
 
 ##--main--
 if __name__ == '__main__':
 
-    try:
+
         # get config at the beginning
-        user, ip = get_config()
-        if ip == "d": #default ip
-            host = "127.0.0.1"
-        else:
-            host = ip
-        print(ip)
-        print(host)
+    user, ip = get_config()
+    if ip == "d": #default ip
+        host = "127.0.0.1"
+    else:
+        host = ip
+    print("Welcome {}".format(user))
 
-        print("Welcome {}".format(user))
+    #connect with server
 
-        #connect with server
-
-        print("Trying to connect to '{}' on port '{}'".format(host, port))
-        s = socket.create_connection((host, port))
+    print("Trying to connect to '{}' on port '{}'".format(host, port))
+    s = socket.create_connection((host, port))
 
 
+    try:
+        send = threading.Thread(target=send_msg, args=(s,))
+        send.start()
 
-        #start two threads: one for sending, one for receiving
-        """try:
-            send = threading.Thread(target= send_msg, args= s)
-            rcv = threading.Thread(target = recv_msg, args= s)
-
-            send.start()
-            rcv.start()
-        except:
-            print("Cant Transmit/Receive")
-        """
-        s.send(msg.encode("cp850"))
-        #bytes = s.recv(1024)
-        #data = bytes.decode("UTF-8")
+        recv = threading.Thread(target=recv_msg, args=(s,))
+        recv.start()
+    #start two threads: one for sending, one for receiving
     except:
-        print("Wrong network configuration OR no server available")
+            print("Cant Transmit/Receive")
 
-    finally:
-        print("Thanks for using ch4t")
+
+
+    #    print("Wrong network configuration OR no server available")
+
+    #finally:
+     #   print("Thanks for using ch4t")
 

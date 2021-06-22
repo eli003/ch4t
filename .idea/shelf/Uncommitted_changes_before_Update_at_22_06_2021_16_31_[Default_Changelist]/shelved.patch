@@ -1,0 +1,108 @@
+Index: server.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\"\"\"\r\n  ch4t-Server\r\n  The server of the ch4t-programm\r\n  Written by Elias Rauth\r\n\"\"\"\r\n\r\nimport socket  # Import socket module\r\nimport sys\r\nimport threading\r\n\r\ncodeset = 'cp850'  # or 'Latin-1' or 'UTF-8'\r\n\r\ndef handle_connection(connection):\r\n    try:\r\n        # Receive the data in small chunks and retransmit it\r\n        while True:\r\n            byte_data = connection.recv(300)\r\n            data = byte_data.decode(codeset)\r\n            print('received \"%s\"' % data, file=sys.stderr)\r\n            print('sending data back to the client', file=sys.stderr)\r\n            connection.sendall((\"server got data: %s\" % data).encode(codeset))\r\n    except (ConnectionAbortedError, ConnectionResetError ):\r\n        pass\r\n    except:\r\n        print(\"Unexpected error:\", sys.exc_info()[0])\r\n    finally:\r\n        connection.close()\r\n        # Clean up the connection\r\n\r\n\r\ns = socket.socket()  # Create a socket object\r\nhost = ''  # unspecified ip - all interfaces on host\r\nport = 64001  # Reserve a port for your service.\r\ns.bind((host, port))  # Bind to the port\r\n\r\ns.listen(1)  # Now wait for client connection.\r\n\r\nwhile True:\r\n    connection, client_address = s.accept()  # Establish / get one connection with client.\r\n#    handle_connection(connection,client_address)   # handle connections one by one\r\n    # or start new thread for each connection\r\n    print('Got connection from %s' % str(client_address), file=sys.stderr)\r\n\r\n    t=threading.Thread(target=handle_connection,args=(connection,))\r\n    t.start()\r\n    # and continue with loop accepting next connection\r\n#s.close()
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/server.py b/server.py
+--- a/server.py	(revision 0a0ce4da49e733ca016c0a1285d3a50dd2239842)
++++ b/server.py	(date 1624368468308)
+@@ -41,7 +41,7 @@
+     # or start new thread for each connection
+     print('Got connection from %s' % str(client_address), file=sys.stderr)
+ 
+-    t=threading.Thread(target=handle_connection,args=(connection,))
++    t = threading.Thread(target=handle_connection,args=(connection,))
+     t.start()
+     # and continue with loop accepting next connection
+ #s.close()
+\ No newline at end of file
+Index: server_class.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/server_class.py b/server_class.py
+new file mode 100644
+--- /dev/null	(date 1624368197101)
++++ b/server_class.py	(date 1624368197101)
+@@ -0,0 +1,78 @@
++"""
++  ch4t-Server
++  The server of the ch4t-programm
++  but it's object-oriented now
++  !!still under development!!
++  Written by Elias Rauth
++"""
++
++import socket  # Import socket module
++import sys
++import threading
++
++codeset = 'cp850'  # or 'Latin-1' or 'UTF-8'
++
++
++# Client-class
++class Clients(object):
++    def __init__(self):
++        self.connection, self.client_address = s.accept()
++
++    def send_message(self, message):
++        self.connection.sendall(("Gesendet: %s" % message).encode(codeset))
++
++    def get_message(self):
++        while True:
++            byte_data = self.connection.recv(300)
++            data = byte_data.decode(codeset)
++            print('received "%s"' % data, file=sys.stderr)
++            print('sending data back to the client', file=sys.stderr)
++            self.connection.sendall(("server got data: %s" % data).encode(codeset))
++
++
++'''
++s = socket.socket()  # Create a socket object
++host = ''  # unspecified ip - all interfaces on host
++port = 64001  # Reserve a port for your service.
++s.bind((host, port))  # Bind to the port
++
++s.listen(1)  # Now wait for client connection.
++new_clients = []
++clients = 1
++'''
++
++
++def get_new_clients():
++    client = Clients()
++    t1 = threading.Thread(target=client.send_message("hallo\n"))
++    t1.start()
++    t2 = threading.Thread(target=client.get_message)
++    t2.start()
++
++
++s = socket.socket()  # Create a socket object
++host = ''  # unspecified ip - all interfaces on host
++port = 64001  # Reserve a port for your service.
++s.bind((host, port))  # Bind to the port
++s.listen(1)  # Now wait for client connection.
++
++t0 = threading.Thread(target=get_new_clients)
++t0.start()
++
++while True:
++    pass
++    # client = Clients()
++    # print("Schleife")
++    # new_client.send_message()
++    # connection, client_address = s.accept()  # Establish / get one connection with client.
++#    handle_connection(connection,client_address)   # handle connections one by one
++    # or start new thread for each connection
++    # print('Got connection from %s' % str(client_address), file=sys.stderr)
++
++    # t1 = threading.Thread(target=client.send_message("hallo\n"))
++    # t = threading.Thread(target=handle_connection, args=(connection,))
++    # t1.start()
++    # t2 = threading.Thread(target=client.get_message())
++    # t2.start()
++    # and continue with loop accepting next connection
++# s.close()

@@ -32,8 +32,8 @@ class Clients:
         while True:
             byte_data = self.connection.recv(1024)   # eingehende nachricht
             data = byte_data.decode(codeset)   # wird deocoded
-            print(self.index, 'has send')    # print von wem die nachricht kommt
-            print('received "%s"' % data, file=sys.stderr)
+            # print(self.index, 'has send')    # print von wem die nachricht kommt
+            print('received "%s" from %d' % (data, self.index), file=sys.stderr)
             for cnt, client in enumerate(type(self).client_list):    # geht liste der clients durch
                 if cnt != self.index:   # wenn counter ungleich nummer des senders: senden
                     client.send(bytes(str(data), 'utf8'))

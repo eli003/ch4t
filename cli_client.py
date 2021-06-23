@@ -31,11 +31,11 @@ def stop_client(exit_code):
     os._exit(exit_code)
 
 def send_msg(conn, user, header_size):
-    send_data = {'user' : [], 'msg' : []}
-    send_data['user'].append(user)
+    data = {'user': user, 'msg': ''}
+
+    print("\n{}You can use '-q' to quit the client.{}\n"
+          .format(look['info'], look['default']))
     try:
-        print("\n{}You can use '-q' to quit the client.{}\n"
-              .format(look['info'], look['default']))
         while True:
             msg = input("{}Me: ".format(look['user']))
             print("{}".format(look['default']))
@@ -43,25 +43,29 @@ def send_msg(conn, user, header_size):
             if msg == "-q":
                 stop_client(0)
             else:
-                send_data['msg'].append(msg)
-                byte_send_data = pickle.dumps(send_data)
-                byte_send_data = bytes(f"{len(byte_send_data):<{header_size}}", 'utf-8') + byte_send_data
-                conn.send(byte_send_data)
-                send_data['msg'].clear()
+                data['msg'] = msg
+                byte_data = pickle.dumps(data)
+                byte_data = bytes(f"{len(byte_data):<{header_size}}", 'utf-8') + byte_data
+                conn.send(byte_data)
+                data['msg'] = ''
 
     except:
         print("{}Error:".format(look['warning']), sys.exc_info()[0], look['default'])
 
-def recv_msg(conn):
+def recv_msg(conn, header_size):
     try:
         while True:
-            bytes = conn.recv(1024)
-            data = bytes.decode("cp850")
-            print(data)
+            raw_data = b''
+            byte_data = conn.recv(1024)
+            raw_data += byte_data
+            data = pickle.loads(raw_data[header_size:])
+            print("{}: {}".format(data['user'], data['msg']))
+
+    except EOFError: #issues if end of pickle is reached... natural error
+        pass
     except:
         print("{}Error:".format(look['warning']), sys.exc_info()[0], look['default'])
-    finally:
-        print("\nThanks for using {}! Bye".format(look['logo']))
+
 
 ##main
 if __name__ == '__main__':
@@ -90,7 +94,7 @@ if __name__ == '__main__':
     try:
         send = threading.Thread(target=send_msg, args=(s,user, header_size))
         send.start()
-        recv = threading.Thread(target=recv_msg, args=(s,))
+        recv = threading.Thread(target=recv_msg, args=(s, header_size))
         recv.start()
 
     except:

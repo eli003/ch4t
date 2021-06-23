@@ -14,3 +14,4 @@
 
 ### June 23rd
 - Tobias: 
+- Elias: Server is now able to recieve and load pickles

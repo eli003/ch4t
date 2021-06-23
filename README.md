@@ -11,13 +11,12 @@ https://pythonprogramming.net/pickle-objects-sockets-tutorial-python-3/
 
 
 ### Server
+When the Server recieves a message of any client, it will send the message to all other clients.
+The Server is waiting for you on Port 64001. Come by and have fun ;)
 
 ### CLI Client
 For a better User Experience, we format the terminal output with colors. We use a 256-color scheme for our CLI client.
 Documentation: https://stackabuse.com/how-to-print-colored-text-in-python
-
-Unfortunately the standard windows cli doesn't support this ANSI codeset by default. Instead of changing registry entries to make it possible, we suggest to use an alternative Windows CLI like "ConEmu" in order to get colors in the terminal: https://conemu.github.io/en/Downloads.html
-
 
 
 ### GUI Client

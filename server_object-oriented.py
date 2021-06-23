@@ -11,6 +11,7 @@
 import socket  # Import socket module
 import sys
 import threading
+import pickle
 
 codeset = 'cp850'  # or 'Latin-1' or 'UTF-8'
 
@@ -43,10 +44,13 @@ class Clients:
     def get_message(self):
         try:
             while True:
+                full_msg = b''
                 byte_data = self.connection.recv(1024)   # incoming message
-                data = byte_data.decode(codeset)   # decoding the message
-                print('received "%s" from Client %d' % (data, self.index), file=sys.stderr)  # who send what message
-                self.send_client_message_to_all(data)
+                full_msg += byte_data
+                msg = (pickle.loads(full_msg[header_size:]))
+                # msg = byte_data.decode(codeset)   # decoding the message
+                print('received "%s" from Client %d' % (msg, self.index), file=sys.stderr)  # who send what message
+                self.send_client_message_to_all(msg)
         except(ConnectionAbortedError, ConnectionResetError):
             print("Connection of Client", self.index, "lost!")
             self.index -= 1
@@ -75,6 +79,7 @@ print("IP-address of the server: ", local_ip)
 
 host = local_ip  # unspecified ip - all interfaces on host
 port = 64001  # Reserve a port for your service.
+header_size = 10  # for pickle to load
 s.bind((host, port))  # Bind to the port
 s.listen(10)  # Now wait for client connection.
 

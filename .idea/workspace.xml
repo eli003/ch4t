@@ -19,7 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04dd7e6a-58e0-478c-a550-13d06909c22f" name="Default Changelist" comment="improved client connection">
+    <list default="true" id="04dd7e6a-58e0-478c-a550-13d06909c22f" name="Default Changelist" comment="now shows hello message at connecting">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server_object-oriented.py" beforeDir="false" afterPath="$PROJECT_DIR$/server_object-oriented.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +51,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../AAP07/net_server_multithread.py" />
     <property name="restartRequiresConfirmation" value="false" />
   </component>
-  <component name="RunManager" selected="Python.server_object-oriented">
+  <component name="RunManager" selected="Python.cli_client">
     <configuration name="TicTacToe" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="network-tic-tac-toe" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -114,7 +115,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="server_class" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="net_server_multithread" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="ch4t" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -122,11 +123,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../AAP07" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/server_class.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../AAP07/net_server_multithread.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -158,11 +159,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.server_object-oriented" />
         <item itemvalue="Python.cli_client" />
+        <item itemvalue="Python.server_object-oriented" />
+        <item itemvalue="Python.net_server_multithread" />
         <item itemvalue="Python.gui_client" />
         <item itemvalue="Python.TicTacToe" />
-        <item itemvalue="Python.server_class" />
       </list>
     </recent_temporary>
   </component>
@@ -259,7 +260,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624475800721</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="now shows hello message at connecting">
+      <created>1624476042160</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1624476042160</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -279,6 +287,7 @@
     <MESSAGE value="adding clients to his own objects won't work" />
     <MESSAGE value="commended the code" />
     <MESSAGE value="improved client connection" />
-    <option name="LAST_COMMIT_MESSAGE" value="improved client connection" />
+    <MESSAGE value="now shows hello message at connecting" />
+    <option name="LAST_COMMIT_MESSAGE" value="now shows hello message at connecting" />
   </component>
 </project>

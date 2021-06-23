@@ -11,6 +11,8 @@ https://pythonprogramming.net/pickle-objects-sockets-tutorial-python-3/
 
 
 ### Server
+When the Server recieves a message of any client, it will send the message to all other clients.
+The Server is waiting for you on Port 64001. Come by and have fun ;)
 
 ### CLI Client
 For a better User Experience, we format the terminal output with colors. We use a 256-color scheme for our CLI client.

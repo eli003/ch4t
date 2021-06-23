@@ -2,6 +2,7 @@
   ch4t-Server
   The server of the ch4t-programm
   Written by Elias Rauth
+  this file can be deleted
 """
 
 import socket  # Import socket module

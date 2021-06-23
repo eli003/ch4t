@@ -17,7 +17,6 @@ For a better User Experience, we format the terminal output with colors. We use 
 Documentation: https://stackabuse.com/how-to-print-colored-text-in-python
 
 
-
 ### GUI Client
 
 

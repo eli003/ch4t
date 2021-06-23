@@ -51,7 +51,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../htl-tk-chat-development" />
     <property name="restartRequiresConfirmation" value="false" />
   </component>
-  <component name="RunManager" selected="Python.gui_client">
+  <component name="RunManager" selected="Python.server_object-oriented">
     <configuration name="TicTacToe" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="network-tic-tac-toe" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -159,8 +159,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.gui_client" />
         <item itemvalue="Python.server_object-oriented" />
+        <item itemvalue="Python.gui_client" />
         <item itemvalue="Python.cli_client" />
         <item itemvalue="Python.TicTacToe" />
         <item itemvalue="Python.server_class" />
@@ -232,7 +232,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624432720570</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="commended the code">
+      <created>1624441474282</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1624441474290</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

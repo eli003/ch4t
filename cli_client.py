@@ -13,7 +13,7 @@ import pickle
 def get_config(server):
     try:
         u = input("{}Before you can start chatting please enter your name: ".format(look['config']))
-        ip = input("What IP has the Server? ('x.x.x.x' format or type 'd' for default IP): ")
+        ip = input("What IP has the Server? ('x.x.x.x' format or type 'd' for default IP ({})): ".format(server))
     except:
         print("Wrong Input") # but what can be wrong tho?
 
@@ -37,7 +37,7 @@ def send_msg(conn, user, header_size):
           .format(look['info'], look['default']))
     try:
         while True:
-            msg = input("{}Me: ".format(look['user']))
+            msg = input("{}".format(look['user']))
             print("{}".format(look['default']))
 
             if msg == "-q":
@@ -59,7 +59,7 @@ def recv_msg(conn, header_size):
             byte_data = conn.recv(1024)
             raw_data += byte_data
             data = pickle.loads(raw_data[header_size:])
-            print("{}: {}".format(data['user'], data['msg']))
+            print("{}{}: {}{}".format(look['other'],data['user'], data['msg'], look['default']))
 
     except EOFError: #issues if end of pickle is reached... natural error
         pass
@@ -67,14 +67,15 @@ def recv_msg(conn, header_size):
         print("{}Error:".format(look['warning']), sys.exc_info()[0], look['default'])
 
 
-##main
+# main
 if __name__ == '__main__':
     server = "127.0.0.1" # add feature: get from a .gitignore config file
     port = 64001  # add feature: get from a .gitignore config file
     header_size = 10
     # Terminal Colors:
     look = dict(default='\033[0;0m', logo='\033[38;5;31mch\033[38;5;57m4\033[38;5;31mt\033[0;0m', user='\033[38;5;28m',
-                config="\033[38;5;243m", info='\033[38;5;31m', warning='\033[48;5;196m\033[38;5;231m')
+                config="\033[38;5;243m", info='\033[38;5;31m', warning='\033[48;5;196m\033[38;5;231m',
+                other='\033[38;5;29m' )
 
     # get config at the beginning
     user, host = get_config(server)

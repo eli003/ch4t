@@ -19,8 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04dd7e6a-58e0-478c-a550-13d06909c22f" name="Default Changelist" comment="adding clients to his own objects won't work">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_06_2021_16_31__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_06_2021_16_31__Default_Changelist_.xml" afterDir="false" />
+    <list default="true" id="04dd7e6a-58e0-478c-a550-13d06909c22f" name="Default Changelist" comment="receiving pickles works now">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cli_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/cli_client.py" afterDir="false" />
     </list>
@@ -53,6 +52,27 @@
     <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RunManager" selected="Python.cli_client">
+    <configuration name="P63_net_server_mthreaded_modified" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ch4t" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../PythonErsteHilfeKasten-20200917" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../PythonErsteHilfeKasten-20200917/P63_net_server_mthreaded_modified.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="TicTacToe" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="network-tic-tac-toe" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -87,27 +107,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cli_client.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="server" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="ch4t" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/server.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -161,17 +160,17 @@
     <list>
       <item itemvalue="Python.TicTacToe" />
       <item itemvalue="Python.cli_client" />
-      <item itemvalue="Python.server" />
       <item itemvalue="Python.server_class" />
       <item itemvalue="Python.server_object-oriented" />
+      <item itemvalue="Python.P63_net_server_mthreaded_modified" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.cli_client" />
+        <item itemvalue="Python.P63_net_server_mthreaded_modified" />
         <item itemvalue="Python.server_object-oriented" />
         <item itemvalue="Python.TicTacToe" />
         <item itemvalue="Python.server_class" />
-        <item itemvalue="Python.server" />
       </list>
     </recent_temporary>
   </component>
@@ -247,41 +246,45 @@
     <option name="LAST_COMMIT_MESSAGE" value="adding clients to his own objects won't work" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1008" height="215" key="GridCell.Tab.0.bottom" timestamp="1624402182729">
+    <state width="1515" height="112" key="GridCell.Tab.0.bottom" timestamp="1624482503251">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1008" height="215" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1624402182729" />
-    <state width="1008" height="215" key="GridCell.Tab.0.center" timestamp="1624402182729">
+    <state width="1515" height="112" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1624482503251" />
+    <state width="1515" height="112" key="GridCell.Tab.0.center" timestamp="1624482503251">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1008" height="215" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1624402182729" />
-    <state width="1008" height="215" key="GridCell.Tab.0.left" timestamp="1624402182729">
+    <state width="1515" height="112" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1624482503251" />
+    <state width="1515" height="112" key="GridCell.Tab.0.left" timestamp="1624482503251">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1008" height="215" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1624402182729" />
-    <state width="1008" height="215" key="GridCell.Tab.0.right" timestamp="1624402182729">
+    <state width="1515" height="112" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1624482503251" />
+    <state width="1515" height="112" key="GridCell.Tab.0.right" timestamp="1624482503251">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1008" height="215" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1624402182729" />
-    <state width="757" height="277" key="GridCell.Tab.1.bottom" timestamp="1624401147893">
+    <state width="1515" height="112" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1624482503251" />
+    <state width="1515" height="277" key="GridCell.Tab.1.bottom" timestamp="1624481775153">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="757" height="277" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1624401147893" />
-    <state width="757" height="277" key="GridCell.Tab.1.center" timestamp="1624401147893">
+    <state width="1515" height="277" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1624481775153" />
+    <state width="1515" height="277" key="GridCell.Tab.1.center" timestamp="1624481775153">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="757" height="277" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1624401147893" />
-    <state width="757" height="277" key="GridCell.Tab.1.left" timestamp="1624401147893">
+    <state width="1515" height="277" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1624481775153" />
+    <state width="1515" height="277" key="GridCell.Tab.1.left" timestamp="1624481775152">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="757" height="277" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1624401147893" />
-    <state width="757" height="277" key="GridCell.Tab.1.right" timestamp="1624401147893">
+    <state width="1515" height="277" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1624481775152" />
+    <state width="1515" height="277" key="GridCell.Tab.1.right" timestamp="1624481775153">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="757" height="277" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1624401147893" />
-    <state x="361" y="165" key="Vcs.Push.Dialog.v2" timestamp="1624401041558">
+    <state width="1515" height="277" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1624481775153" />
+    <state x="361" y="165" key="Vcs.Push.Dialog.v2" timestamp="1624480635200">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="361" y="165" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1624401041558" />
+    <state x="361" y="165" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1624480635200" />
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1624481189512">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1624481189512" />
   </component>
 </project>

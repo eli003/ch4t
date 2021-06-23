@@ -158,6 +158,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.TicTacToe" />
+      <item itemvalue="Python.cli_client" />
+      <item itemvalue="Python.server" />
+      <item itemvalue="Python.server_class" />
+      <item itemvalue="Python.server_object-oriented" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.cli_client" />

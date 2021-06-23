@@ -13,5 +13,5 @@
 - Tobias: first working cli_client featuring two threads for handling message sending and receiving simultaneously.
 
 ### June 23rd
-- Tobias: 
+- Tobias: Receiving and sending pickles (object-messages) now works with cli_client.py
 - Elias: Server is now able to recieve and load pickles

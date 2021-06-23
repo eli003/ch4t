@@ -79,3 +79,4 @@ s.bind((host, port))  # Bind to the port
 s.listen(10)  # Now wait for client connection.
 
 get_new_clients()    # function call for checking for new clients
+

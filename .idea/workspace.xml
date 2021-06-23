@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04dd7e6a-58e0-478c-a550-13d06909c22f" name="Default Changelist" comment="commended the code">
+    <list default="true" id="04dd7e6a-58e0-478c-a550-13d06909c22f" name="Default Changelist" comment="improved client connection">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server_object-oriented.py" beforeDir="false" afterPath="$PROJECT_DIR$/server_object-oriented.py" afterDir="false" />
     </list>
@@ -48,7 +48,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../htl-tk-chat-development" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../AAP07/net_server_multithread.py" />
     <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RunManager" selected="Python.server_object-oriented">
@@ -160,8 +160,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.server_object-oriented" />
-        <item itemvalue="Python.gui_client" />
         <item itemvalue="Python.cli_client" />
+        <item itemvalue="Python.gui_client" />
         <item itemvalue="Python.TicTacToe" />
         <item itemvalue="Python.server_class" />
       </list>
@@ -239,7 +239,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624441474290</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="improved client connection">
+      <created>1624471959440</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1624471959440</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -258,6 +265,7 @@
     <MESSAGE value="edited server_object-oriented.py" />
     <MESSAGE value="adding clients to his own objects won't work" />
     <MESSAGE value="commended the code" />
-    <option name="LAST_COMMIT_MESSAGE" value="commended the code" />
+    <MESSAGE value="improved client connection" />
+    <option name="LAST_COMMIT_MESSAGE" value="improved client connection" />
   </component>
 </project>

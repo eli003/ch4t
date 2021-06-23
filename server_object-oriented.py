@@ -23,19 +23,19 @@ class Clients:
         # werden dieser appended
         self.index = index
         print("Verbundene Clients: ", len(type(self).client_list))
+        print(type(self).client_list)
 
     def send_message(self, message):
         self.connection.send(("Gesendet: %s" % message).encode(codeset))
 
     def get_message(self):
         while True:
-            byte_data = self.connection.recv(1024)
-            data = byte_data.decode(codeset)
-            print(self.index, 'has send')
+            byte_data = self.connection.recv(1024)   # eingehende nachricht
+            data = byte_data.decode(codeset)   # wird deocoded
+            print(self.index, 'has send')    # print von wem die nachricht kommt
             print('received "%s"' % data, file=sys.stderr)
-            print('sending data back to the client', file=sys.stderr)
-            for cnt, client in enumerate(type(self).client_list):    # nachricht wird nicht an sender gesendet
-                if cnt != self.index:
+            for cnt, client in enumerate(type(self).client_list):    # geht liste der clients durch
+                if cnt != self.index:   # wenn counter ungleich nummer des senders: senden
                     client.send(bytes(str(data), 'utf8'))
 
 

@@ -19,10 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04dd7e6a-58e0-478c-a550-13d06909c22f" name="Default Changelist" comment="adding clients to his own objects won't work">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_06_2021_16_31__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_06_2021_16_31__Default_Changelist_.xml" afterDir="false" />
+    <list default="true" id="04dd7e6a-58e0-478c-a550-13d06909c22f" name="Default Changelist" comment="commended the code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cli_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/cli_client.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server_object-oriented.py" beforeDir="false" afterPath="$PROJECT_DIR$/server_object-oriented.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +51,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
   </component>
-  <component name="RunManager" selected="Python.cli_client">
+  <component name="RunManager" selected="Python.server_object-oriented">
     <configuration name="TicTacToe" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="network-tic-tac-toe" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -160,8 +159,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.cli_client" />
         <item itemvalue="Python.server_object-oriented" />
+        <item itemvalue="Python.cli_client" />
         <item itemvalue="Python.TicTacToe" />
         <item itemvalue="Python.server_class" />
         <item itemvalue="Python.server" />
@@ -219,7 +218,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624388075126</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="commended the code">
+      <created>1624431551258</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1624431551258</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -237,44 +243,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="edited server_object-oriented.py" />
     <MESSAGE value="adding clients to his own objects won't work" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding clients to his own objects won't work" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state width="1008" height="215" key="GridCell.Tab.0.bottom" timestamp="1624402182729">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state width="1008" height="215" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1624402182729" />
-    <state width="1008" height="215" key="GridCell.Tab.0.center" timestamp="1624402182729">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state width="1008" height="215" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1624402182729" />
-    <state width="1008" height="215" key="GridCell.Tab.0.left" timestamp="1624402182729">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state width="1008" height="215" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1624402182729" />
-    <state width="1008" height="215" key="GridCell.Tab.0.right" timestamp="1624402182729">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state width="1008" height="215" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1624402182729" />
-    <state width="757" height="277" key="GridCell.Tab.1.bottom" timestamp="1624401147893">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state width="757" height="277" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1624401147893" />
-    <state width="757" height="277" key="GridCell.Tab.1.center" timestamp="1624401147893">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state width="757" height="277" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1624401147893" />
-    <state width="757" height="277" key="GridCell.Tab.1.left" timestamp="1624401147893">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state width="757" height="277" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1624401147893" />
-    <state width="757" height="277" key="GridCell.Tab.1.right" timestamp="1624401147893">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state width="757" height="277" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1624401147893" />
-    <state x="361" y="165" key="Vcs.Push.Dialog.v2" timestamp="1624401041558">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="361" y="165" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1624401041558" />
+    <MESSAGE value="commended the code" />
+    <option name="LAST_COMMIT_MESSAGE" value="commended the code" />
   </component>
 </project>

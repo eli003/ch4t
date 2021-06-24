@@ -39,8 +39,11 @@ class Clients:
             pass
 
     def send_server_message_to_client(self, message):
+        data = {'user': "Server", 'msg': message}
+        byte_data = pickle.dumps(data)
+        byte_data = bytes(f"{len(byte_data):<{header_size}}", 'utf-8') + byte_data
         try:
-            self.connection.send((message.encode(codeset)))
+            self.connection.send(byte_data)
         finally:
             pass
 
@@ -53,7 +56,7 @@ class Clients:
                 # msg = (pickle.loads(full_msg[header_size:]))
                 msg = byte_data.decode(codeset)   # decoding the message
                 print('received "%s" from Client %d' % (msg, self.client_id), file=sys.stderr)  # who send what message
-                self.send_client_message_to_all(msg, self.client_id)  # sending unloaded pickle to other clients
+                self.send_client_message_to_all(byte_data, self.client_id)  # sending unloaded pickle to other clients
         except(ConnectionAbortedError, ConnectionResetError):
             print("Connection of Client", self.client_id, "lost!")
             self.client_list.remove(self.connection)  # leaving clients getting removed from client_list
@@ -65,9 +68,9 @@ def get_new_clients():
     counter = 1  # for every new client, the counter increases
     while True:
         client = Clients(counter)  # generating the object client of the class Clients
-        client.send_server_message_to_client('\nConnected to Server: %s:%s\n' % (local_ip, port))   # server sending msg
-        client.send_server_message_to_client('\nYou are now connected to the ch4t-Server!\n'
-                                             'Please be nice to other people ;)\n\n')
+        client.send_server_message_to_client('\nConnected to Server: %s:%s\n\nYou are now connected to the '
+                                             'ch4t-Server!\nPlease be nice to other people ;)\n\n' % (local_ip, port))
+                                             # server sending msg
 
         t2 = threading.Thread(target=client.get_message)  # thread checking constantly for new messages
         t2.start()

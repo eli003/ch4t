@@ -66,6 +66,17 @@ def recv_msg(conn, header_size):
     except:
         print("{}Error:".format(look['warning']), sys.exc_info()[0], look['default'])
 
+def inform_server(conn, msg):
+    data = {'user': '-toserver', 'msg': msg}
+
+    try:
+        byte_data = pickle.dumps(data)
+        byte_data = bytes(f"{len(byte_data):<{header_size}}", 'utf-8') + byte_data
+        conn.send(byte_data)
+        data['msg'] = ''
+
+    except:
+        print("{}Error:".format(look['warning']), sys.exc_info()[0], look['default'])
 
 # main
 if __name__ == '__main__':
@@ -93,6 +104,7 @@ if __name__ == '__main__':
     #chatting
     # start two threads: one for sending, one for receiving
     try:
+        inform_server(s, "{} is now online!".format(user))
         send = threading.Thread(target=send_msg, args=(s,user, header_size))
         send.start()
         recv = threading.Thread(target=recv_msg, args=(s, header_size))

@@ -1,5 +1,5 @@
 # ch4t
-## Fortschritt
+## Progress
 ### June 18th
 - Elias: created git-repository and files and tested server client connection with ncat
 - Tobias: first successful test of cli_client with ncat

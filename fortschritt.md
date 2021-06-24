@@ -23,7 +23,7 @@
 
 
 
-### DO TO
+## TO DOs
 - decrement client list at server when client disconnects (for continous operation of server -> avoids long lists)
 - server support: assign 'user' to client objects for e.g. status messages like 'client x disconnected'
 - client restart with '-r' input and also ask when connection failed

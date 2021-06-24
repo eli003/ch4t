@@ -19,10 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04dd7e6a-58e0-478c-a550-13d06909c22f" name="Default Changelist" comment="working client-server-communication; working on leaving-bug">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server_object-oriented.py" beforeDir="false" afterPath="$PROJECT_DIR$/server_object-oriented.py" afterDir="false" />
-    </list>
+    <list default="true" id="04dd7e6a-58e0-478c-a550-13d06909c22f" name="Default Changelist" comment="celebrating 100 commits!!!" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -281,7 +278,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624562513836</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="celebrating 100 commits!!!">
+      <created>1624569199303</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1624569199303</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -304,6 +308,7 @@
     <MESSAGE value="client-server-communication working now; still working on client-leaving-bug" />
     <MESSAGE value="updated fortschritt.md" />
     <MESSAGE value="working client-server-communication; working on leaving-bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="working client-server-communication; working on leaving-bug" />
+    <MESSAGE value="celebrating 100 commits!!!" />
+    <option name="LAST_COMMIT_MESSAGE" value="celebrating 100 commits!!!" />
   </component>
 </project>

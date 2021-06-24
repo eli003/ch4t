@@ -15,3 +15,6 @@
 ### June 23rd
 - Tobias: Cli_client is now able to receive and load pickles. We can now send messages with user metadata
 - Elias: Server is now able to recieve and load pickles
+
+### June 24th
+- Elias: still working at the bug that happens, when a client leaves

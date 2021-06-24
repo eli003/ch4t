@@ -1,5 +1,5 @@
 # ch4t
-## Fortschritt
+## Progress
 ### June 18th
 - Elias: created git-repository and files and tested server client connection with ncat
 - Tobias: first successful test of cli_client with ncat
@@ -18,3 +18,12 @@
 
 ### June 24th
 - Elias: The communication between the server and the cli_client is working now, but still working on the bug that happens, when a client leaves
+- Tobias: added '-toserver' client messages and support for server to understand it. Created 'server multicast message' method
+
+
+
+### DO TO
+- decrement client list at server when client disconnects (for continous operation of server -> avoids long lists)
+- server support: assign 'user' to client objects for e.g. status messages like 'client x disconnected'
+- client restart with '-r' input and also ask when connection failed
+

@@ -19,10 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04dd7e6a-58e0-478c-a550-13d06909c22f" name="Default Changelist" comment="improved sending about pickle">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server_object-oriented.py" beforeDir="false" afterPath="$PROJECT_DIR$/server_object-oriented.py" afterDir="false" />
-    </list>
+    <list default="true" id="04dd7e6a-58e0-478c-a550-13d06909c22f" name="Default Changelist" comment="client-server-communication working now; still working on client-leaving-bug" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -260,7 +257,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624560042649</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="client-server-communication working now; still working on client-leaving-bug">
+      <created>1624561146199</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1624561146199</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -281,6 +285,7 @@
     <MESSAGE value="improving the code; still working on leaving client bug" />
     <MESSAGE value="updated fortschritt.md" />
     <MESSAGE value="improved sending about pickle" />
-    <option name="LAST_COMMIT_MESSAGE" value="improved sending about pickle" />
+    <MESSAGE value="client-server-communication working now; still working on client-leaving-bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="client-server-communication working now; still working on client-leaving-bug" />
   </component>
 </project>

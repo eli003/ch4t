@@ -17,4 +17,4 @@
 - Elias: Server is now able to recieve and load pickles
 
 ### June 24th
-- Elias: still working at the bug that happens, when a client leaves
+- Elias: The communication between the server and the cli_client is working now, but still working on the bug that happens, when a client leaves

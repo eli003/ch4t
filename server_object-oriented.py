@@ -50,6 +50,22 @@ class Clients:
         finally:
             pass
 
+    def send_server_multicast(self, message, client_number): #to all except the one who sent it
+        data = {'user': "Server", 'msg': message}
+        try:
+            cnt = 1
+            print(client_number)
+            for client in self.client_list:  # goes through the list of clients
+                if client_number != cnt:  # if counter is not the same as the number of the sender: send
+                    byte_data = pickle.dumps(data)
+                    byte_data = bytes(f"{len(byte_data):<{header_size}}", 'utf-8') + byte_data
+                    client.send(byte_data)
+                    # client.send(bytes(str(message), 'utf8'))  # send the message to another clients
+                cnt += 1
+                print("server_broadcast")
+        finally:
+            pass
+
     def receive_message(self):
         try:
             while True:
@@ -58,8 +74,14 @@ class Clients:
                 full_msg += byte_data
                 msg = (pickle.loads(full_msg[header_size:]))
                 # msg = byte_data.decode(codeset)   # decoding the message
+
                 print('received "%s" from Client %d' % (msg, self.client_id), file=sys.stderr)  # who send what message
-                self.send_client_message_to_all(msg, self.client_id)  # sending unloaded pickle to other clients
+                if msg['user'] == '-toserver':
+                    self.send_server_mutlicast(msg['msg'], self.client_id)
+                    print("jo")
+                else:
+                    print("was geht")
+                    self.send_client_message_to_all(msg, self.client_id)  # sending unloaded pickle to other clients
         except(ConnectionAbortedError, ConnectionResetError):
             print("Connection of Client", self.client_id, "lost!")
             self.client_list.remove(self.connection)  # leaving clients getting removed from client_list

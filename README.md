@@ -22,7 +22,8 @@ Documentation: https://stackabuse.com/how-to-print-colored-text-in-python
 ### GUI Client
 
 
-
+### doto
+- decrement client list at server when client disconnects (for continous operation of server -> avoids long lists)
 
 
 

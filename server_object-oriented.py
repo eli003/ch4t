@@ -78,9 +78,7 @@ class Clients:
                 print('received "%s" from Client %d' % (msg, self.client_id), file=sys.stderr)  # who send what message
                 if msg['user'] == '-toserver':
                     self.send_server_multicast(msg['msg'], self.client_id)
-                    print("jo")
                 else:
-                    print("was geht")
                     self.send_client_message_to_all(msg, self.client_id)  # sending unloaded pickle to other clients
         except(ConnectionAbortedError, ConnectionResetError):
             print("Connection of Client", self.client_id, "lost!")

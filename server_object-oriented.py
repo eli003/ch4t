@@ -53,8 +53,8 @@ class Clients:
                 full_msg = b''
                 byte_data = self.connection.recv(1024)   # incoming message
                 full_msg += byte_data
-                # msg = (pickle.loads(full_msg[header_size:]))
-                msg = byte_data.decode(codeset)   # decoding the message
+                msg = (pickle.loads(full_msg[header_size:]))
+                # msg = byte_data.decode(codeset)   # decoding the message
                 print('received "%s" from Client %d' % (msg, self.client_id), file=sys.stderr)  # who send what message
                 self.send_client_message_to_all(byte_data, self.client_id)  # sending unloaded pickle to other clients
         except(ConnectionAbortedError, ConnectionResetError):

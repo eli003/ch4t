@@ -9,6 +9,7 @@ The GUI-Version of the client consists of a window, where all messages can be se
 For Communication, we will rely on an Object with a user and the message. For en/decoding we will use pickle. Documentation: 
 https://pythonprogramming.net/pickle-objects-sockets-tutorial-python-3/
 
+For developement it's nice to have more than one client active and open. To achieve this in PyCharm, start a client -> go to "Edit Configuration" in the upper right field -> check the option "Allow parallel run". You can now start another client without closing the old one :)
 
 ### Server
 When the Server recieves a message of any client, it will send the message to all other clients.

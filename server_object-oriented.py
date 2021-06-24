@@ -50,7 +50,7 @@ class Clients:
         finally:
             pass
 
-    def get_message(self):
+    def receive_message(self):
         try:
             while True:
                 full_msg = b''
@@ -73,9 +73,9 @@ def get_new_clients():
         client = Clients(counter)  # generating the object client of the class Clients
         client.send_server_message_to_client('\nConnected to Server: %s:%s\n\nYou are now connected to the '
                                              'ch4t-Server!\nPlease be nice to other people ;)\n\n' % (local_ip, port))
-        # server sending msg
+        # server sending hello-msg
 
-        t2 = threading.Thread(target=client.get_message)  # thread checking constantly for new messages
+        t2 = threading.Thread(target=client.receive_message)  # thread checking constantly for new messages
         t2.start()
         counter += 1  # counter increases
 

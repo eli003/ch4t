@@ -50,7 +50,7 @@ class Clients:
         finally:
             pass
 
-    def send_server_multicast(self, message, client_number): #to all except the one who sent it
+    def send_server_multicast(self, message, client_number):
         data = {'user': "Server", 'msg': message}
         try:
             cnt = 1
@@ -77,7 +77,7 @@ class Clients:
 
                 print('received "%s" from Client %d' % (msg, self.client_id), file=sys.stderr)  # who send what message
                 if msg['user'] == '-toserver':
-                    self.send_server_mutlicast(msg['msg'], self.client_id)
+                    self.send_server_multicast(msg['msg'], self.client_id)
                     print("jo")
                 else:
                     print("was geht")

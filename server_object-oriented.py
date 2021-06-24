@@ -18,7 +18,7 @@ codeset = 'cp850'  # or 'Latin-1' or 'UTF-8'
 
 # Client-class
 class Clients:
-    client_list = list()    # All Clients shares the same client_list
+    client_list = list()  # All Clients shares the same client_list
 
     def __init__(self, client_id):
         self.connection, self.client_address = s.accept()
@@ -33,7 +33,10 @@ class Clients:
             print(client_number)
             for client in self.client_list:  # goes through the list of clients
                 if client_number != cnt:  # if counter is not the same as the number of the sender: send
-                    client.send(bytes(str(message), 'utf8'))  # send the message to another clients
+                    byte_data = pickle.dumps(message)
+                    byte_data = bytes(f"{len(byte_data):<{header_size}}", 'utf-8') + byte_data
+                    client.send(byte_data)
+                    # client.send(bytes(str(message), 'utf8'))  # send the message to another clients
                 cnt += 1
         finally:
             pass
@@ -51,12 +54,12 @@ class Clients:
         try:
             while True:
                 full_msg = b''
-                byte_data = self.connection.recv(1024)   # incoming message
+                byte_data = self.connection.recv(1024)  # incoming message
                 full_msg += byte_data
                 msg = (pickle.loads(full_msg[header_size:]))
                 # msg = byte_data.decode(codeset)   # decoding the message
                 print('received "%s" from Client %d' % (msg, self.client_id), file=sys.stderr)  # who send what message
-                self.send_client_message_to_all(byte_data, self.client_id)  # sending unloaded pickle to other clients
+                self.send_client_message_to_all(msg, self.client_id)  # sending unloaded pickle to other clients
         except(ConnectionAbortedError, ConnectionResetError):
             print("Connection of Client", self.client_id, "lost!")
             self.client_list.remove(self.connection)  # leaving clients getting removed from client_list
@@ -70,7 +73,7 @@ def get_new_clients():
         client = Clients(counter)  # generating the object client of the class Clients
         client.send_server_message_to_client('\nConnected to Server: %s:%s\n\nYou are now connected to the '
                                              'ch4t-Server!\nPlease be nice to other people ;)\n\n' % (local_ip, port))
-                                             # server sending msg
+        # server sending msg
 
         t2 = threading.Thread(target=client.get_message)  # thread checking constantly for new messages
         t2.start()
@@ -91,4 +94,4 @@ if __name__ == '__main__':
     s.bind((host, port))  # Bind to the port
     s.listen(10)  # Now wait for client connection.
 
-    get_new_clients()    # function call for checking for new clients
+    get_new_clients()  # function call for checking for new clients

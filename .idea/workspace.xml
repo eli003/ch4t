@@ -19,7 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04dd7e6a-58e0-478c-a550-13d06909c22f" name="Default Changelist" comment="updated fortschritt.md">
+    <list default="true" id="04dd7e6a-58e0-478c-a550-13d06909c22f" name="Default Changelist" comment="improved sending about pickle">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server_object-oriented.py" beforeDir="false" afterPath="$PROJECT_DIR$/server_object-oriented.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +51,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
   </component>
-  <component name="RunManager" selected="Python.server_object-oriented">
+  <component name="RunManager" selected="Python.cli_client">
     <configuration name="P63_net_server_mthreaded_modified" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="ch4t" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -238,7 +239,28 @@
       <option name="project" value="LOCAL" />
       <updated>1624559063807</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="improved sending about pickle">
+      <created>1624559921656</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1624559921656</updated>
+    </task>
+    <task id="LOCAL-00010" summary="improved sending about pickle">
+      <created>1624559928605</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1624559928605</updated>
+    </task>
+    <task id="LOCAL-00011" summary="improved sending about pickle">
+      <created>1624560042649</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1624560042649</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -258,6 +280,7 @@
     <MESSAGE value="adding clients to his own objects won't work" />
     <MESSAGE value="improving the code; still working on leaving client bug" />
     <MESSAGE value="updated fortschritt.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated fortschritt.md" />
+    <MESSAGE value="improved sending about pickle" />
+    <option name="LAST_COMMIT_MESSAGE" value="improved sending about pickle" />
   </component>
 </project>

@@ -13,8 +13,6 @@ import sys
 import threading
 import pickle
 
-codeset = 'cp850'  # or 'Latin-1' or 'UTF-8'
-
 
 # Client-class
 class Clients:
@@ -50,7 +48,7 @@ class Clients:
         finally:
             pass
 
-    def send_server_multicast(self, message, client_number):
+    def send_server_message_to_all(self, message, client_number):
         data = {'user': "Server", 'msg': message}
         try:
             cnt = 1
@@ -73,11 +71,10 @@ class Clients:
                 byte_data = self.connection.recv(1024)  # incoming message
                 full_msg += byte_data
                 msg = (pickle.loads(full_msg[header_size:]))
-                # msg = byte_data.decode(codeset)   # decoding the message
 
                 print('received "%s" from Client %d' % (msg, self.client_id), file=sys.stderr)  # who send what message
                 if msg['user'] == '-toserver':
-                    self.send_server_multicast(msg['msg'], self.client_id)
+                    self.send_server_message_to_all(msg['msg'], self.client_id)
                 else:
                     self.send_client_message_to_all(msg, self.client_id)  # sending unloaded pickle to other clients
         except(ConnectionAbortedError, ConnectionResetError):

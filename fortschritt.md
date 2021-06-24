@@ -19,6 +19,7 @@
 ### June 24th
 - Elias: The communication between the server and the cli_client is working now, but still working on the bug that happens, when a client leaves
 - Tobias: added '-toserver' client messages and support for server to understand it. Created 'server multicast message' method
+- General: Celebrating 100 commits
 
 
 

@@ -21,6 +21,9 @@
 - Tobias: added '-toserver' client messages and support for server to understand it. Created 'server multicast message' method
 - General: Celebrating 100 commits
 
+### June 25th
+- Tobias: removed some bugs
+
 
 
 ## TO DOs

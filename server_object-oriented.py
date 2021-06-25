@@ -17,25 +17,24 @@ import pickle
 # Client-class
 class Clients:
     client_list = list()  # All Clients shares the same client_list
+    id_list = list()   # List of client_id's that are online
 
     def __init__(self, client_id):
         self.connection, self.client_address = s.accept()
         self.client_list.append(self.connection)  # new clients get appended to the client_list
         self.client_id = client_id
+        self.id_list.append(self.client_id)     # the id of new clients get appended to the id_list
         print("Connected Clients: ", len(self.client_list))
         print(self.client_list)
 
     def send_client_message_to_all(self, message, client_number):
         try:
-            cnt = 1
-            print(client_number)
-            for client in self.client_list:  # goes through the list of clients
-                if client_number != cnt:  # if counter is not the same as the number of the sender: send
+            for client, ID in zip(self.client_list, self.id_list):  # goes through the list of clients and id_list
+                if client_number != ID:  # if sender_id is not the same as the actual id -> send
                     byte_data = pickle.dumps(message)
                     byte_data = bytes(f"{len(byte_data):<{header_size}}", 'utf-8') + byte_data
-                    client.send(byte_data)
-                    # client.send(bytes(str(message), 'utf8'))  # send the message to another clients
-                cnt += 1
+                    client.send(byte_data)   # send the message to another clients
+                    print("sent to client", self.client_id)
         finally:
             pass
 
@@ -51,15 +50,12 @@ class Clients:
     def send_server_message_to_all(self, message, client_number):
         data = {'user': "Server", 'msg': message}
         try:
-            cnt = 1
             print(client_number)
-            for client in self.client_list:  # goes through the list of clients
-                if client_number != cnt:  # if counter is not the same as the number of the sender: send
+            for client, ID in zip(self.client_list, self.id_list):  # goes through the list of clients and id_list
+                if client_number != ID:  # if sender_id is not the same as the actual id -> send
                     byte_data = pickle.dumps(data)
                     byte_data = bytes(f"{len(byte_data):<{header_size}}", 'utf-8') + byte_data
-                    client.send(byte_data)
-                    # client.send(bytes(str(message), 'utf8'))  # send the message to another clients
-                cnt += 1
+                    client.send(byte_data)   # send the message to another clients
                 print("server_broadcast")
         finally:
             pass
@@ -80,6 +76,7 @@ class Clients:
         except(ConnectionAbortedError, ConnectionResetError):
             print("Connection of Client", self.client_id, "lost!")
             self.client_list.remove(self.connection)  # leaving clients getting removed from client_list
+            self.id_list.remove(self.client_id)
             print("Connected Clients: ", len(self.client_list))
             print(self.client_list)
 
@@ -105,9 +102,9 @@ if __name__ == '__main__':
     # print(hostname)
     print("IP-address of the server: ", local_ip)
 
-    host = local_ip  # unspecified ip - all interfaces on host
+    host = local_ip  # interface of the server
     port = 64001  # Reserve a port for your service.
-    header_size = 10  # for pickle to load
+    header_size = 10  # for pickle to load and dump
     s.bind((host, port))  # Bind to the port
     s.listen(10)  # Now wait for client connection.
 

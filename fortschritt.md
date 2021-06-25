@@ -23,6 +23,7 @@
 
 ### June 25th
 - Tobias: fixed some bugs
+- Elias: fixed the bug when a client leaves
 
 
 

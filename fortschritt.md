@@ -22,7 +22,7 @@
 - General: Celebrating 100 commits
 
 ### June 25th
-- Tobias: removed some bugs
+- Tobias: fixed some bugs
 
 
 

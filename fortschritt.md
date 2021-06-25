@@ -19,10 +19,11 @@
 ### June 24th
 - Elias: The communication between the server and the cli_client is working now, but still working on the bug that happens, when a client leaves
 - Tobias: added '-toserver' client messages and support for server to understand it. Created 'server multicast message' method
+- General: Celebrating 100 commits
 
 
 
-### DO TO
+## TO DOs
 - decrement client list at server when client disconnects (for continous operation of server -> avoids long lists)
 - server support: assign 'user' to client objects for e.g. status messages like 'client x disconnected'
 - client restart with '-r' input and also ask when connection failed

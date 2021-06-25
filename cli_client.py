@@ -24,6 +24,7 @@ def get_config(server):
         host = server
     else:
         host = ip
+
     return u, host
 
 def stop_client(exit_code):
@@ -38,7 +39,7 @@ def send_msg(conn, user, header_size):
     try:
         while True:
             msg = input("{}".format(look['user']))
-            print("{}".format(look['default']))
+            #print("{}".format(look['default']))
 
             if msg == "-q":
                 stop_client(0)
@@ -49,6 +50,9 @@ def send_msg(conn, user, header_size):
                 conn.send(byte_data)
                 data['msg'] = ''
 
+    except ConnectionResetError:
+        print("{}Server offline.{}".format(look['info'], look['default']))
+        stop_client(3)
     except:
         print("{}Error:".format(look['warning']), sys.exc_info()[0], look['default'])
 
@@ -63,6 +67,9 @@ def recv_msg(conn, header_size):
 
     except EOFError: #issues if end of pickle is reached... natural error
         pass
+    except ConnectionResetError:
+        print("{}Server offline.{}".format(look['info'], look['default']))
+        stop_client(3)
     except:
         print("{}Error:".format(look['warning']), sys.exc_info()[0], look['default'])
 

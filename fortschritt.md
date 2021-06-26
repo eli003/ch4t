@@ -25,6 +25,9 @@
 - Tobias: fixed some bugs
 - Elias: fixed the bug when a client leaves
 
+### June 26th
+- Elias: created a gui-client-version
+
 
 
 ## TO DOs

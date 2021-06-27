@@ -43,6 +43,7 @@ def send_msg(conn, user, header_size):
             #print("{}".format(look['default']))
 
             if msg == "-q":
+                inform_server(conn, "{} left the ch4t!".format(user))
                 stop_client(0)
             else:
                 data['msg'] = msg

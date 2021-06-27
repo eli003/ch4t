@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 """
 ch4t 
 file: cli_client.py
@@ -119,15 +120,6 @@ if __name__ == '__main__':
 
     except:
         print("{}Can't connect to Server, please check your connection.{}".format(look['info'], look['default']))
-        """restart = input("{}\nRestart the program? (y/n) {}".format(look['config'], look['default']))
-        if restart == "y":
-            try:
-                python = sys.executable
-                os.execv(python, python, *sys.argv)
-            except:
-                print("{}Can't restart the program.{}".format(look['info'], look['default']))
-                stop_client()
-        else:"""
         stop_client(1)
 
 
